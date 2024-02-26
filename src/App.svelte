@@ -8,7 +8,7 @@
   <nav>
     <ul>
       <li>
-        <a href="/" use:link>Home</a>
+        <a href="/" use:link>Home</a>    
       </li>
     </ul>
   </nav>
