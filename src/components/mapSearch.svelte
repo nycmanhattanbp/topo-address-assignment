@@ -59,7 +59,7 @@
       plutoLayer = new FeatureLayer({
         url:
           // 'https://services9.arcgis.com/E91gVsRO3nuXX9et/ArcGIS/rest/services/mn_topo_pluto_public/FeatureServer/0',
-          'https://services1.arcgis.com/UXmZPIfr0bxRyaUR/ArcGIS/rest/services/mn_topo_pluto_public/FeatureServer/0',
+          'https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_pluto_PublicView/FeatureServer/0',
         renderer: typeRenderer,
         opacity: 0.4,
         outFields: ['BBL', 'Type'],

@@ -2,6 +2,8 @@
   import Router, { link } from 'svelte-spa-router'
   import { routes } from './routes'
   import 'bulma/css/bulma.css'
+
+  // git subtree push --prefix public/ origin gh-pages
 </script>
 
 <div class="app">

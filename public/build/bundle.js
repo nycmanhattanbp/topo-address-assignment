@@ -1489,7 +1489,7 @@ var app = (function () {
     			div = element("div");
     			attr_dev(div, "id", "map");
     			attr_dev(div, "class", "svelte-x7oda4");
-    			add_location(div, file, 111, 0, 2791);
+    			add_location(div, file, 111, 0, 2795);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1577,7 +1577,7 @@ var app = (function () {
 
     				$$invalidate(2, plutoLayer = new FeatureLayer({
     						url: // 'https://services9.arcgis.com/E91gVsRO3nuXX9et/ArcGIS/rest/services/mn_topo_pluto_public/FeatureServer/0',
-    						'https://services1.arcgis.com/UXmZPIfr0bxRyaUR/ArcGIS/rest/services/mn_topo_pluto_public/FeatureServer/0',
+    						'https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_pluto_PublicView/FeatureServer/0',
     						renderer: typeRenderer,
     						opacity: 0.4,
     						outFields: ['BBL', 'Type'],
@@ -3290,8 +3290,8 @@ var app = (function () {
     			strong = element("strong");
     			strong.textContent = "Type: ";
     			t1 = text(t1_value);
-    			add_location(strong, file$6, 290, 5, 7929);
-    			add_location(p, file$6, 290, 2, 7926);
+    			add_location(strong, file$6, 290, 5, 7937);
+    			add_location(p, file$6, 290, 2, 7934);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3330,8 +3330,8 @@ var app = (function () {
     			strong = element("strong");
     			strong.textContent = "Comments: ";
     			t1 = text(t1_value);
-    			add_location(strong, file$6, 292, 5, 8013);
-    			add_location(p, file$6, 292, 2, 8010);
+    			add_location(strong, file$6, 292, 5, 8021);
+    			add_location(p, file$6, 292, 2, 8018);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3365,7 +3365,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "No files attached to this lot";
-    			add_location(p, file$6, 308, 2, 8333);
+    			add_location(p, file$6, 308, 2, 8341);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3406,7 +3406,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(ul, file$6, 297, 2, 8141);
+    			add_location(ul, file$6, 297, 2, 8149);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ul, anchor);
@@ -3477,8 +3477,8 @@ var app = (function () {
     			attr_dev(a, "href", a_href_value = /*lot*/ ctx[11].url);
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noopener noreferrer");
-    			add_location(a, file$6, 300, 6, 8197);
-    			add_location(li, file$6, 299, 4, 8186);
+    			add_location(a, file$6, 300, 6, 8205);
+    			add_location(li, file$6, 299, 4, 8194);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -3517,7 +3517,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Loading...";
-    			add_location(p, file$6, 324, 2, 8726);
+    			add_location(p, file$6, 324, 2, 8734);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3631,8 +3631,8 @@ var app = (function () {
     			p = element("p");
     			strong = element("strong");
     			strong.textContent = "No addresses mapped in the database, please view the files above.";
-    			add_location(strong, file$6, 319, 4, 8606);
-    			add_location(p, file$6, 318, 2, 8598);
+    			add_location(strong, file$6, 319, 4, 8614);
+    			add_location(p, file$6, 318, 2, 8606);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3685,8 +3685,8 @@ var app = (function () {
     			t2 = text(" addresses for this lot.");
     			t3 = space();
     			create_component(addresstable.$$.fragment);
-    			add_location(strong, file$6, 314, 5, 8435);
-    			add_location(p, file$6, 314, 2, 8432);
+    			add_location(strong, file$6, 314, 5, 8443);
+    			add_location(p, file$6, 314, 2, 8440);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3844,37 +3844,37 @@ var app = (function () {
     			a3 = element("a");
     			a3.textContent = "Go back to main page";
     			attr_dev(h3, "class", "is-3");
-    			add_location(h3, file$6, 260, 2, 7013);
+    			add_location(h3, file$6, 260, 2, 7021);
     			attr_dev(p0, "class", "is-6 subtitle");
-    			add_location(p0, file$6, 261, 2, 7053);
+    			add_location(p0, file$6, 261, 2, 7061);
     			attr_dev(a0, "href", a0_href_value = `https://zola.planning.nyc.gov/l/lot/${/*bbl_break*/ ctx[4].boro}/${/*bbl_break*/ ctx[4].block}/${/*bbl_break*/ ctx[4].lot}`);
     			attr_dev(a0, "target", "_blank");
     			attr_dev(a0, "rel", "noopener noreferrer");
-    			add_location(a0, file$6, 264, 6, 7126);
-    			add_location(li0, file$6, 263, 4, 7115);
+    			add_location(a0, file$6, 264, 6, 7134);
+    			add_location(li0, file$6, 263, 4, 7123);
     			attr_dev(a1, "href", a1_href_value = `http://a836-acris.nyc.gov/bblsearch/bblsearch.asp?borough=${/*bbl_break*/ ctx[4].boro}&block=${/*bbl_break*/ ctx[4].block}&lot=${/*bbl_break*/ ctx[4].lot}`);
     			attr_dev(a1, "target", "_blank");
     			attr_dev(a1, "rel", "noopener noreferrer");
-    			add_location(a1, file$6, 272, 6, 7351);
-    			add_location(li1, file$6, 271, 4, 7340);
+    			add_location(a1, file$6, 272, 6, 7359);
+    			add_location(li1, file$6, 271, 4, 7348);
     			attr_dev(a2, "href", a2_href_value = `http://a810-bisweb.nyc.gov/bisweb/PropertyBrowseByBBLServlet?allborough=${/*bbl_break*/ ctx[4].boro}&allblock=${/*bbl_break*/ ctx[4].block}&alllot=${/*bbl_break*/ ctx[4].lot}&go5=+GO+&requestid=0`);
     			attr_dev(a2, "target", "_blank");
     			attr_dev(a2, "rel", "noopener noreferrer");
-    			add_location(a2, file$6, 280, 6, 7609);
-    			add_location(li2, file$6, 279, 4, 7598);
-    			add_location(ul, file$6, 262, 2, 7106);
-    			add_location(strong, file$6, 295, 5, 8080);
-    			add_location(p1, file$6, 295, 2, 8077);
-    			add_location(hr0, file$6, 311, 2, 8381);
-    			add_location(br, file$6, 327, 2, 8755);
+    			add_location(a2, file$6, 280, 6, 7617);
+    			add_location(li2, file$6, 279, 4, 7606);
+    			add_location(ul, file$6, 262, 2, 7114);
+    			add_location(strong, file$6, 295, 5, 8088);
+    			add_location(p1, file$6, 295, 2, 8085);
+    			add_location(hr0, file$6, 311, 2, 8389);
+    			add_location(br, file$6, 327, 2, 8763);
     			attr_dev(div0, "id", "map");
     			attr_dev(div0, "class", "svelte-1g1l9fv");
-    			add_location(div0, file$6, 329, 2, 8765);
-    			add_location(hr1, file$6, 330, 2, 8812);
+    			add_location(div0, file$6, 329, 2, 8773);
+    			add_location(hr1, file$6, 330, 2, 8820);
     			attr_dev(a3, "href", "/");
-    			add_location(a3, file$6, 331, 2, 8821);
+    			add_location(a3, file$6, 331, 2, 8829);
     			attr_dev(div1, "class", "container");
-    			add_location(div1, file$6, 259, 0, 6987);
+    			add_location(div1, file$6, 259, 0, 6995);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4133,7 +4133,7 @@ var app = (function () {
     				};
 
     				const plutoLayer = new FeatureLayer({
-    						url: 'https://services1.arcgis.com/UXmZPIfr0bxRyaUR/ArcGIS/rest/services/mn_topo_pluto_public/FeatureServer/0',
+    						url: 'https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_pluto_PublicView/FeatureServer/0',
     						renderer: typeRenderer,
     						opacity: 0.4,
     						outFields: ['BBL', 'Type'],
@@ -4160,7 +4160,7 @@ var app = (function () {
 
     					//add address layer
     					addressLayer = new FeatureLayer({
-    							url: 'https://services1.arcgis.com/UXmZPIfr0bxRyaUR/ArcGIS/rest/services/mn_topo_addresses_public/FeatureServer/0',
+    							url: 'https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_addresses_PublicView/FeatureServer/0',
     							popupTemplate: {
     								title: '{House_Num} {Street}',
     								content: [
@@ -4401,15 +4401,15 @@ var app = (function () {
     			div0 = element("div");
     			create_component(router.$$.fragment);
     			attr_dev(a, "href", "/");
-    			add_location(a, file$7, 10, 8, 192);
-    			add_location(li, file$7, 9, 6, 179);
-    			add_location(ul, file$7, 8, 4, 168);
+    			add_location(a, file$7, 12, 8, 248);
+    			add_location(li, file$7, 11, 6, 235);
+    			add_location(ul, file$7, 10, 4, 224);
     			attr_dev(nav, "class", "svelte-ax8dby");
-    			add_location(nav, file$7, 7, 2, 158);
+    			add_location(nav, file$7, 9, 2, 214);
     			attr_dev(div0, "class", "content svelte-ax8dby");
-    			add_location(div0, file$7, 14, 2, 259);
+    			add_location(div0, file$7, 16, 2, 315);
     			attr_dev(div1, "class", "app svelte-ax8dby");
-    			add_location(div1, file$7, 6, 0, 138);
+    			add_location(div1, file$7, 8, 0, 194);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
