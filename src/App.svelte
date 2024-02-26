@@ -9,7 +9,6 @@
     <ul>
       <li>
         <a href="/" use:link>Home</a>
-        <a href="/" use:link>test</a>
       </li>
     </ul>
   </nav>
