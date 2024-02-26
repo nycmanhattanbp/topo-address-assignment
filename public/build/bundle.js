@@ -1489,7 +1489,7 @@ var app = (function () {
     			div = element("div");
     			attr_dev(div, "id", "map");
     			attr_dev(div, "class", "svelte-x7oda4");
-    			add_location(div, file, 110, 0, 2671);
+    			add_location(div, file, 111, 0, 2791);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1576,7 +1576,8 @@ var app = (function () {
     				};
 
     				$$invalidate(2, plutoLayer = new FeatureLayer({
-    						url: 'https://services9.arcgis.com/E91gVsRO3nuXX9et/ArcGIS/rest/services/mn_topo_pluto_public/FeatureServer/0',
+    						url: // 'https://services9.arcgis.com/E91gVsRO3nuXX9et/ArcGIS/rest/services/mn_topo_pluto_public/FeatureServer/0',
+    						'https://services1.arcgis.com/UXmZPIfr0bxRyaUR/ArcGIS/rest/services/mn_topo_pluto_public/FeatureServer/0',
     						renderer: typeRenderer,
     						opacity: 0.4,
     						outFields: ['BBL', 'Type'],
@@ -4378,12 +4379,9 @@ var app = (function () {
     	let nav;
     	let ul;
     	let li;
-    	let a0;
+    	let a;
     	let link_action;
     	let t1;
-    	let a1;
-    	let link_action_1;
-    	let t3;
     	let div0;
     	let router;
     	let current;
@@ -4397,24 +4395,19 @@ var app = (function () {
     			nav = element("nav");
     			ul = element("ul");
     			li = element("li");
-    			a0 = element("a");
-    			a0.textContent = "Home";
+    			a = element("a");
+    			a.textContent = "Home";
     			t1 = space();
-    			a1 = element("a");
-    			a1.textContent = "test";
-    			t3 = space();
     			div0 = element("div");
     			create_component(router.$$.fragment);
-    			attr_dev(a0, "href", "/");
-    			add_location(a0, file$7, 10, 8, 192);
-    			attr_dev(a1, "href", "/");
-    			add_location(a1, file$7, 11, 8, 230);
+    			attr_dev(a, "href", "/");
+    			add_location(a, file$7, 10, 8, 192);
     			add_location(li, file$7, 9, 6, 179);
     			add_location(ul, file$7, 8, 4, 168);
     			attr_dev(nav, "class", "svelte-ax8dby");
     			add_location(nav, file$7, 7, 2, 158);
     			attr_dev(div0, "class", "content svelte-ax8dby");
-    			add_location(div0, file$7, 15, 2, 293);
+    			add_location(div0, file$7, 14, 2, 259);
     			attr_dev(div1, "class", "app svelte-ax8dby");
     			add_location(div1, file$7, 6, 0, 138);
     		},
@@ -4426,20 +4419,14 @@ var app = (function () {
     			append_dev(div1, nav);
     			append_dev(nav, ul);
     			append_dev(ul, li);
-    			append_dev(li, a0);
-    			append_dev(li, t1);
-    			append_dev(li, a1);
-    			append_dev(div1, t3);
+    			append_dev(li, a);
+    			append_dev(div1, t1);
     			append_dev(div1, div0);
     			mount_component(router, div0, null);
     			current = true;
 
     			if (!mounted) {
-    				dispose = [
-    					action_destroyer(link_action = link.call(null, a0)),
-    					action_destroyer(link_action_1 = link.call(null, a1))
-    				];
-
+    				dispose = action_destroyer(link_action = link.call(null, a));
     				mounted = true;
     			}
     		},
@@ -4457,7 +4444,7 @@ var app = (function () {
     			if (detaching) detach_dev(div1);
     			destroy_component(router);
     			mounted = false;
-    			run_all(dispose);
+    			dispose();
     		}
     	};
 
