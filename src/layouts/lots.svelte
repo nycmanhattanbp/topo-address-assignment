@@ -79,7 +79,7 @@
 
       const plutoLayer = new FeatureLayer({
         url:
-          'https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_pluto_PublicView/FeatureServer/0',
+          'https://manhattanbp.maps.arcgis.com/home/item.html?id=1ee0444b41ba446f9a3bd1ea95ca7b4d',
         renderer: typeRenderer,
         opacity: 0.4,
         outFields: ['BBL', 'Type'],
@@ -114,7 +114,7 @@
         //add address layer
         addressLayer = new FeatureLayer({
           url:
-            'https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_addresses_PublicView/FeatureServer/0',
+            'https://manhattanbp.maps.arcgis.com/home/item.html?id=68f6d0f865e3499dacd181f386a479de',
           popupTemplate: {
             title: '{House_Num} {Street}',
             content: [
