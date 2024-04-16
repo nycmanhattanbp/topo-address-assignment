@@ -50,15 +50,14 @@
           }
         },
         uniqueValueInfos: [
-          createFillSymbol('New/Permanent', '#ed5151', false),
-          createFillSymbol('Tentative', '#149ece', false),
-          createFillSymbol('No Topo', '#ffde3e', [230, 0, 0, 0.75])
+          createFillSymbol('New/Permanent', '#b92025', false),
+          createFillSymbol('Tentative', '#3276bb', false),
+          createFillSymbol('No Topo', '#f3c94d', [185, 32, 37, 0.75])
         ]
       }
 
       plutoLayer = new FeatureLayer({
         url:
-          // 'https://services9.arcgis.com/E91gVsRO3nuXX9et/ArcGIS/rest/services/mn_topo_pluto_public/FeatureServer/0',
           'https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_pluto_PublicView/FeatureServer/0',
         renderer: typeRenderer,
         opacity: 0.4,
@@ -97,7 +96,7 @@
         layerInfos: [
           {
             layer: plutoLayer,
-            title: 'Parcels/ Lots'
+            title: 'Parcels/Lots'
           }
         ]
       })

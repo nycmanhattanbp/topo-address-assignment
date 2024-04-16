@@ -74,7 +74,7 @@
             style: 'none'
           }
         },
-        uniqueValueInfos: [createFillSymbol(bbl, '#ed5151')]
+        uniqueValueInfos: [createFillSymbol(bbl, '#b92025')]
       }
 
       const plutoLayer = new FeatureLayer({
@@ -162,7 +162,7 @@
             },
             {
               layer: plutoLayer,
-              title: 'Parcels/ Lots'
+              title: 'Parcels/Lots'
             }
           ]
         })
