@@ -111,6 +111,42 @@
         const { attributes } = results.features[0].toJSON()
         lotDetails.comments = attributes['Comments']
         lotDetails.type = attributes['Type']
+        
+        // style point marker symbols
+        // function createMarkerSymbol(value, url) {
+        //   return {
+        //     value: value,
+        //     symbol: {
+        //       type: 'picture-marker',
+        //       url: '',
+        //       width: '20px',
+        //       height: '20px'
+        //     }
+        //   }
+        // }
+        // const safTypeRenderer = {
+        //   type: 'unique-value',
+        //   field: 'SAF Type',
+        //   defaultSymbol: {
+        //     type: 'simple-marker',
+        //     style: 'circle',
+        //     size: '20px', // pixels
+        //     outline: {
+        //       color: '#aaaaaa',
+        //       width: 3 // points
+        //     }
+        //   },
+        //   uniqueValueInfos: [
+        //     createMarkerSymbol('Vanity Address'),
+        //     createMarkerSymbol('Commercial'),
+        //     createMarkerSymbol('Primary Commercial'),
+        //     createMarkerSymbol('Residential'),
+        //     createMarkerSymbol('Garage'),
+        //     createMarkerSymbol('House of Worship'),
+        //     createMarkerSymbol('Community Facility')
+        //   ]
+        // }
+        
         //add address layer
         addressLayer = new FeatureLayer({
           url:
