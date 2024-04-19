@@ -3271,7 +3271,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (326:2) {#if lotDetails.type}
+    // (317:2) {#if lotDetails.type}
     function create_if_block_4(ctx) {
     	let p;
     	let strong;
@@ -3284,8 +3284,8 @@ var app = (function () {
     			strong = element("strong");
     			strong.textContent = "Type: ";
     			t1 = text(t1_value);
-    			add_location(strong, file$6, 326, 5, 9050);
-    			add_location(p, file$6, 326, 2, 9047);
+    			add_location(strong, file$6, 317, 7, 9533);
+    			add_location(p, file$6, 317, 4, 9530);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3304,14 +3304,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(326:2) {#if lotDetails.type}",
+    		source: "(317:2) {#if lotDetails.type}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (328:8) {#if lotDetails.comments}
+    // (320:2) {#if lotDetails.comments}
     function create_if_block_3(ctx) {
     	let p;
     	let strong;
@@ -3324,8 +3324,8 @@ var app = (function () {
     			strong = element("strong");
     			strong.textContent = "Comments: ";
     			t1 = text(t1_value);
-    			add_location(strong, file$6, 328, 5, 9134);
-    			add_location(p, file$6, 328, 2, 9131);
+    			add_location(strong, file$6, 320, 7, 9621);
+    			add_location(p, file$6, 320, 4, 9618);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3344,14 +3344,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(328:8) {#if lotDetails.comments}",
+    		source: "(320:2) {#if lotDetails.comments}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (344:2) {:else}
+    // (335:2) {:else}
     function create_else_block_2(ctx) {
     	let p;
 
@@ -3359,7 +3359,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "No files attached to this lot";
-    			add_location(p, file$6, 344, 2, 9454);
+    			add_location(p, file$6, 335, 4, 9968);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3374,14 +3374,14 @@ var app = (function () {
     		block,
     		id: create_else_block_2.name,
     		type: "else",
-    		source: "(344:2) {:else}",
+    		source: "(335:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (333:2) {#if lotDetails.files.length}
+    // (325:2) {#if lotDetails.files.length}
     function create_if_block_2(ctx) {
     	let ul;
     	let each_value = /*lotDetails*/ ctx[3].files;
@@ -3400,7 +3400,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(ul, file$6, 333, 2, 9262);
+    			add_location(ul, file$6, 325, 4, 9751);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ul, anchor);
@@ -3446,14 +3446,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(333:2) {#if lotDetails.files.length}",
+    		source: "(325:2) {#if lotDetails.files.length}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (335:4) {#each lotDetails.files as lot}
+    // (327:6) {#each lotDetails.files as lot}
     function create_each_block$2(ctx) {
     	let li;
     	let a;
@@ -3471,8 +3471,8 @@ var app = (function () {
     			attr_dev(a, "href", a_href_value = /*lot*/ ctx[11].url);
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noopener noreferrer");
-    			add_location(a, file$6, 336, 6, 9318);
-    			add_location(li, file$6, 335, 4, 9307);
+    			add_location(a, file$6, 328, 10, 9817);
+    			add_location(li, file$6, 327, 8, 9802);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -3496,14 +3496,14 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(335:4) {#each lotDetails.files as lot}",
+    		source: "(327:6) {#each lotDetails.files as lot}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (360:8) {:else}
+    // (355:2) {:else}
     function create_else_block_1(ctx) {
     	let p;
 
@@ -3511,7 +3511,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Loading...";
-    			add_location(p, file$6, 360, 2, 9847);
+    			add_location(p, file$6, 355, 4, 10415);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3528,14 +3528,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(360:8) {:else}",
+    		source: "(355:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (350:2) {#if addresses}
+    // (341:2) {#if addresses}
     function create_if_block$3(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -3608,14 +3608,14 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(350:2) {#if addresses}",
+    		source: "(341:2) {#if addresses}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (354:2) {:else}
+    // (348:4) {:else}
     function create_else_block$1(ctx) {
     	let p;
     	let strong;
@@ -3625,8 +3625,8 @@ var app = (function () {
     			p = element("p");
     			strong = element("strong");
     			strong.textContent = "No addresses mapped in the database, please view the files above.";
-    			add_location(strong, file$6, 355, 4, 9727);
-    			add_location(p, file$6, 354, 2, 9719);
+    			add_location(strong, file$6, 349, 8, 10277);
+    			add_location(p, file$6, 348, 6, 10265);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3644,14 +3644,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(354:2) {:else}",
+    		source: "(348:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (350:18) {#if addresses.length}
+    // (342:4) {#if addresses.length}
     function create_if_block_1$1(ctx) {
     	let p;
     	let strong;
@@ -3679,8 +3679,8 @@ var app = (function () {
     			t2 = text(" addresses for this lot.");
     			t3 = space();
     			create_component(addresstable.$$.fragment);
-    			add_location(strong, file$6, 350, 5, 9556);
-    			add_location(p, file$6, 350, 2, 9553);
+    			add_location(strong, file$6, 343, 8, 10087);
+    			add_location(p, file$6, 342, 6, 10075);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3718,7 +3718,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(350:18) {#if addresses.length}",
+    		source: "(342:4) {#if addresses.length}",
     		ctx
     	});
 
@@ -3838,37 +3838,37 @@ var app = (function () {
     			a3 = element("a");
     			a3.textContent = "Go back to main page";
     			attr_dev(h3, "class", "is-3");
-    			add_location(h3, file$6, 296, 2, 8134);
+    			add_location(h3, file$6, 290, 2, 8648);
     			attr_dev(p0, "class", "is-6 subtitle");
-    			add_location(p0, file$6, 297, 2, 8174);
+    			add_location(p0, file$6, 291, 2, 8688);
     			attr_dev(a0, "href", a0_href_value = `https://zola.planning.nyc.gov/l/lot/${/*bbl_break*/ ctx[4].boro}/${/*bbl_break*/ ctx[4].block}/${/*bbl_break*/ ctx[4].lot}`);
     			attr_dev(a0, "target", "_blank");
     			attr_dev(a0, "rel", "noopener noreferrer");
-    			add_location(a0, file$6, 300, 6, 8247);
-    			add_location(li0, file$6, 299, 4, 8236);
+    			add_location(a0, file$6, 294, 6, 8761);
+    			add_location(li0, file$6, 293, 4, 8750);
     			attr_dev(a1, "href", a1_href_value = `http://a836-acris.nyc.gov/bblsearch/bblsearch.asp?borough=${/*bbl_break*/ ctx[4].boro}&block=${/*bbl_break*/ ctx[4].block}&lot=${/*bbl_break*/ ctx[4].lot}`);
     			attr_dev(a1, "target", "_blank");
     			attr_dev(a1, "rel", "noopener noreferrer");
-    			add_location(a1, file$6, 308, 6, 8472);
-    			add_location(li1, file$6, 307, 4, 8461);
+    			add_location(a1, file$6, 301, 6, 8975);
+    			add_location(li1, file$6, 300, 4, 8964);
     			attr_dev(a2, "href", a2_href_value = `http://a810-bisweb.nyc.gov/bisweb/PropertyBrowseByBBLServlet?allborough=${/*bbl_break*/ ctx[4].boro}&allblock=${/*bbl_break*/ ctx[4].block}&alllot=${/*bbl_break*/ ctx[4].lot}&go5=+GO+&requestid=0`);
     			attr_dev(a2, "target", "_blank");
     			attr_dev(a2, "rel", "noopener noreferrer");
-    			add_location(a2, file$6, 316, 6, 8730);
-    			add_location(li2, file$6, 315, 4, 8719);
-    			add_location(ul, file$6, 298, 2, 8227);
-    			add_location(strong, file$6, 331, 5, 9201);
-    			add_location(p1, file$6, 331, 2, 9198);
-    			add_location(hr0, file$6, 347, 2, 9502);
-    			add_location(br, file$6, 363, 2, 9876);
+    			add_location(a2, file$6, 308, 6, 9222);
+    			add_location(li2, file$6, 307, 4, 9211);
+    			add_location(ul, file$6, 292, 2, 8741);
+    			add_location(strong, file$6, 323, 5, 9688);
+    			add_location(p1, file$6, 323, 2, 9685);
+    			add_location(hr0, file$6, 338, 2, 10016);
+    			add_location(br, file$6, 358, 2, 10444);
     			attr_dev(div0, "id", "map");
     			attr_dev(div0, "class", "svelte-1g1l9fv");
-    			add_location(div0, file$6, 365, 2, 9886);
-    			add_location(hr1, file$6, 366, 2, 9933);
+    			add_location(div0, file$6, 360, 2, 10454);
+    			add_location(hr1, file$6, 361, 2, 10499);
     			attr_dev(a3, "href", "/");
-    			add_location(a3, file$6, 367, 2, 9942);
+    			add_location(a3, file$6, 362, 2, 10508);
     			attr_dev(div1, "class", "container");
-    			add_location(div1, file$6, 295, 0, 8108);
+    			add_location(div1, file$6, 289, 0, 8622);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4041,8 +4041,8 @@ var app = (function () {
     			const { House_Num: houseNum, Street: street, FID: id, SAF_Type: type, EditDate: lastEdit } = attributes;
 
     			return {
-    				houseNum: houseNum ? houseNum : '_', //default if null
-    				street: street ? street : '_', //default if null
+    				houseNum: houseNum ? houseNum : "_", //default if null
+    				street: street ? street : "_", //default if null
     				id,
     				type,
     				lastEdit,
@@ -4081,18 +4081,18 @@ var app = (function () {
     	let view;
     	let addressLayer;
     	let highlightSelect;
-    	let lotDetails = { files: [], comments: '', type: '' };
+    	let lotDetails = { files: [], comments: "", type: "" };
 
     	onMount(() => {
     		require(
     			[
-    				'esri/Map',
-    				'esri/views/MapView',
-    				'esri/layers/FeatureLayer',
-    				'esri/widgets/Legend'
+    				"esri/Map",
+    				"esri/views/MapView",
+    				"esri/layers/FeatureLayer",
+    				"esri/widgets/Legend"
     			],
     			(Map, MapView, FeatureLayer, Legend) => {
-    				const map = new Map({ basemap: 'gray-vector' });
+    				const map = new Map({ basemap: "gray-vector" });
 
     				view = new MapView({
     						container,
@@ -4106,31 +4106,31 @@ var app = (function () {
     						value,
     						symbol: {
     							color,
-    							type: 'simple-fill',
-    							style: 'solid',
-    							outline: { style: 'none' }
+    							type: "simple-fill",
+    							style: "solid",
+    							outline: { style: "none" }
     						},
     						label: value
     					};
     				}
 
     				const typeRenderer = {
-    					type: 'unique-value',
-    					field: 'BBL',
+    					type: "unique-value",
+    					field: "BBL",
     					defaultSymbol: {
-    						type: 'simple-fill',
-    						color: '#aaaaaa',
-    						style: 'solid',
-    						outline: { style: 'none' }
+    						type: "simple-fill",
+    						color: "#aaaaaa",
+    						style: "solid",
+    						outline: { style: "none" }
     					},
-    					uniqueValueInfos: [createFillSymbol(bbl, '#b92025')]
+    					uniqueValueInfos: [createFillSymbol(bbl, "#b92025")]
     				};
 
     				const plutoLayer = new FeatureLayer({
-    						url: 'https://manhattanbp.maps.arcgis.com/home/item.html?id=1ee0444b41ba446f9a3bd1ea95ca7b4d',
+    						url: "https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_pluto_PublicView/FeatureServer/0",
     						renderer: typeRenderer,
     						opacity: 0.4,
-    						outFields: ['BBL', 'Type'],
+    						outFields: ["BBL", "Type"],
     						definitionExpression: `BBL = ${bbl}`
     					});
 
@@ -4149,67 +4149,33 @@ var app = (function () {
     				plutoLayer.queryFeatures().then(results => {
     					const geometry = results.features[0].geometry;
     					const { attributes } = results.features[0].toJSON();
-    					$$invalidate(3, lotDetails.comments = attributes['Comments'], lotDetails);
-    					$$invalidate(3, lotDetails.type = attributes['Type'], lotDetails);
+    					$$invalidate(3, lotDetails.comments = attributes["Comments"], lotDetails);
+    					$$invalidate(3, lotDetails.type = attributes["Type"], lotDetails);
 
-    					// style point marker symbols
-    					// function createMarkerSymbol(value, url) {
-    					//   return {
-    					//     value: value,
-    					//     symbol: {
-    					//       type: 'picture-marker',
-    					//       url: '',
-    					//       width: '20px',
-    					//       height: '20px'
-    					//     }
-    					//   }
-    					// }
-    					// const safTypeRenderer = {
-    					//   type: 'unique-value',
-    					//   field: 'SAF Type',
-    					//   defaultSymbol: {
-    					//     type: 'simple-marker',
-    					//     style: 'circle',
-    					//     size: '20px', // pixels
-    					//     outline: {
-    					//       color: '#aaaaaa',
-    					//       width: 3 // points
-    					//     }
-    					//   },
-    					//   uniqueValueInfos: [
-    					//     createMarkerSymbol('Vanity Address'),
-    					//     createMarkerSymbol('Commercial'),
-    					//     createMarkerSymbol('Primary Commercial'),
-    					//     createMarkerSymbol('Residential'),
-    					//     createMarkerSymbol('Garage'),
-    					//     createMarkerSymbol('House of Worship'),
-    					//     createMarkerSymbol('Community Facility')
-    					//   ]
-    					// }
     					//add address layer
     					addressLayer = new FeatureLayer({
-    							url: 'https://manhattanbp.maps.arcgis.com/home/item.html?id=68f6d0f865e3499dacd181f386a479de',
+    							url: "https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_addresses_PublicView/FeatureServer/0",
     							popupTemplate: {
-    								title: '{House_Num} {Street}',
+    								title: "{House_Num} {Street}",
     								content: [
     									{
-    										type: 'fields',
+    										type: "fields",
     										fieldInfos: [
     											{
-    												fieldName: 'House_Num',
-    												label: 'House Number'
+    												fieldName: "House_Num",
+    												label: "House Number"
     											},
-    											{ fieldName: 'Street', label: 'Street' },
-    											{ fieldName: 'SAF_Type', label: 'SAF Type' },
+    											{ fieldName: "Street", label: "Street" },
+    											{ fieldName: "SAF_Type", label: "SAF Type" },
     											{
-    												fieldName: 'Primary_',
-    												label: 'Is Primary'
+    												fieldName: "Primary_",
+    												label: "Is Primary"
     											},
-    											{ fieldName: 'Posted', label: 'Is Posted' },
-    											{ fieldName: 'Comments', label: 'Comments' }
+    											{ fieldName: "Posted", label: "Is Posted" },
+    											{ fieldName: "Comments", label: "Comments" }
     										]
     									},
-    									{ type: 'attachments' }
+    									{ type: "attachments" }
     								]
     							}
     						});
@@ -4218,34 +4184,34 @@ var app = (function () {
     					const legend = new Legend({
     							view,
     							layerInfos: [
-    								{ layer: addressLayer, title: 'Addresses' },
-    								{ layer: plutoLayer, title: 'Parcels/Lots' }
+    								{ layer: addressLayer, title: "Addresses" },
+    								{ layer: plutoLayer, title: "Parcels/Lots" }
     							]
     						});
 
-    					view.ui.add(legend, 'bottom-right');
+    					view.ui.add(legend, "bottom-right");
     					map.add(addressLayer, 1);
 
     					//filter for address that is within 10 feet of buffer of bbl
     					view.whenLayerView(addressLayer).then(layerView => {
     						layerView.filter = {
     							geometry,
-    							spatialRelationship: 'contains',
+    							spatialRelationship: "contains",
     							distance: 5,
-    							units: 'feet'
+    							units: "feet"
     						};
     					}).then(() => {
     						const query = addressLayer.createQuery();
     						query.geometry = geometry;
-    						query.spatialRelationship = 'contains';
+    						query.spatialRelationship = "contains";
     						query.distance = 5;
-    						query.units = 'feet';
+    						query.units = "feet";
     						return queryFeaturesItem(addressLayer, query);
     					}).then(features => {
     						$$invalidate(2, addresses = features);
 
     						//reset view
-    						view.whenLayerView(addressLayer).then(layerView => layerView.filter = { where: '1=1' });
+    						view.whenLayerView(addressLayer).then(layerView => layerView.filter = { where: "1=1" });
     					});
     				});
     			}
@@ -4317,15 +4283,15 @@ var app = (function () {
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty & /*params*/ 64) {
     			//remove all commas
-    			 $$invalidate(0, bbl = parseInt(params.bbl.split(',').join('')));
+    			 $$invalidate(0, bbl = parseInt(params.bbl.split(",").join("")));
     		}
 
     		if ($$self.$$.dirty & /*bbl*/ 1) {
     			//generate bbl
     			 $$invalidate(4, bbl_break = {
     				boro: bbl.toString()[0],
-    				block: bbl.toString().slice(1, 6).replace(/^0+/g, ''),
-    				lot: bbl.toString().slice(6).replace(/^0+/g, '')
+    				block: bbl.toString().slice(1, 6).replace(/^0+/g, ""),
+    				lot: bbl.toString().slice(6).replace(/^0+/g, "")
     			});
     		}
     	};

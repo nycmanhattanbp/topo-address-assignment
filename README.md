@@ -91,3 +91,4 @@ Then, from within your project folder:
 npm run build
 surge public my-project.surge.sh
 ```
+git subtree push --prefix public/ origin gh-pages

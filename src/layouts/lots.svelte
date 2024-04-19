@@ -1,192 +1,184 @@
 <script>
-  import { onMount } from 'svelte'
-  import { link } from 'svelte-spa-router'
-  import AddressTable from '../components/addressTable.svelte'
-  export let params = {}
-  let container
-  let addresses
-  let view
-  let addressLayer
-  let highlightSelect
+  import { onMount } from "svelte";
+  import { link } from "svelte-spa-router";
+  import AddressTable from "../components/addressTable.svelte";
+  export let params = {};
+  let container;
+  let addresses;
+  let view;
+  let addressLayer;
+  let highlightSelect;
   let lotDetails = {
     files: [],
-    comments: '',
-    type: ''
-  }
+    comments: "",
+    type: "",
+  };
   //remove all commas
-  $: bbl = parseInt(params.bbl.split(',').join(''))
+  $: bbl = parseInt(params.bbl.split(",").join(""));
 
   //generate bbl
 
   $: bbl_break = {
     boro: bbl.toString()[0],
-    block: bbl
-      .toString()
-      .slice(1, 6)
-      .replace(/^0+/g, ''),
-    lot: bbl
-      .toString()
-      .slice(6)
-      .replace(/^0+/g, '')
-  }
+    block: bbl.toString().slice(1, 6).replace(/^0+/g, ""),
+    lot: bbl.toString().slice(6).replace(/^0+/g, ""),
+  };
 
   onMount(() => {
     require([
-      'esri/Map',
-      'esri/views/MapView',
-      'esri/layers/FeatureLayer',
-      'esri/widgets/Legend'
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/layers/FeatureLayer",
+      "esri/widgets/Legend",
     ], (Map, MapView, FeatureLayer, Legend) => {
       const map = new Map({
-        basemap: 'gray-vector'
-      })
+        basemap: "gray-vector",
+      });
 
       view = new MapView({
         container,
         map,
         center: [-74.0034, 40.7128],
-        zoom: 16
-      })
+        zoom: 16,
+      });
 
       function createFillSymbol(value, color) {
         return {
           value: value,
           symbol: {
             color: color,
-            type: 'simple-fill',
-            style: 'solid',
+            type: "simple-fill",
+            style: "solid",
             outline: {
-              style: 'none'
-            }
+              style: "none",
+            },
           },
-          label: value
-        }
+          label: value,
+        };
       }
 
       const typeRenderer = {
-        type: 'unique-value',
-        field: 'BBL',
+        type: "unique-value",
+        field: "BBL",
         defaultSymbol: {
-          type: 'simple-fill',
-          color: '#aaaaaa',
-          style: 'solid',
+          type: "simple-fill",
+          color: "#aaaaaa",
+          style: "solid",
           outline: {
-            style: 'none'
-          }
+            style: "none",
+          },
         },
-        uniqueValueInfos: [createFillSymbol(bbl, '#b92025')]
-      }
+        uniqueValueInfos: [createFillSymbol(bbl, "#b92025")],
+      };
 
       const plutoLayer = new FeatureLayer({
-        url:
-          'https://manhattanbp.maps.arcgis.com/home/item.html?id=1ee0444b41ba446f9a3bd1ea95ca7b4d',
+        url: "https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_pluto_PublicView/FeatureServer/0",
         renderer: typeRenderer,
         opacity: 0.4,
-        outFields: ['BBL', 'Type'],
-        definitionExpression: `BBL = ${bbl}`
-      })
+        outFields: ["BBL", "Type"],
+        definitionExpression: `BBL = ${bbl}`,
+      });
 
       //add to map
-      map.add(plutoLayer, 0)
+      map.add(plutoLayer, 0);
 
       //zoom to plutoLayer extent
       plutoLayer
         .when(() => plutoLayer.queryExtent())
-        .then(response => view.goTo(response.extent))
+        .then((response) => view.goTo(response.extent));
 
       //query for attachements on lot
       plutoLayer
         .when(() => plutoLayer.queryObjectIds())
-        .then(objectIds => plutoLayer.queryAttachments({ objectIds }))
-        .then(attachements => {
+        .then((objectIds) => plutoLayer.queryAttachments({ objectIds }))
+        .then((attachements) => {
           lotDetails.files = Object.keys(attachements).reduce(
             (all, key) => [...all, ...attachements[key]],
             []
-          )
-        })
+          );
+        });
 
       //query for addresses
-      plutoLayer.queryFeatures().then(results => {
-        const geometry = results.features[0].geometry
-        const { attributes } = results.features[0].toJSON()
-        lotDetails.comments = attributes['Comments']
-        lotDetails.type = attributes['Type']
-        
+      plutoLayer.queryFeatures().then((results) => {
+        const geometry = results.features[0].geometry;
+        const { attributes } = results.features[0].toJSON();
+        lotDetails.comments = attributes["Comments"];
+        lotDetails.type = attributes["Type"];
+
         // style point marker symbols
-        // function createMarkerSymbol(value, url) {
-        //   return {
-        //     value: value,
-        //     symbol: {
-        //       type: 'picture-marker',
-        //       url: '',
-        //       width: '20px',
-        //       height: '20px'
-        //     }
-        //   }
-        // }
-        // const safTypeRenderer = {
-        //   type: 'unique-value',
-        //   field: 'SAF Type',
-        //   defaultSymbol: {
-        //     type: 'simple-marker',
-        //     style: 'circle',
-        //     size: '20px', // pixels
-        //     outline: {
-        //       color: '#aaaaaa',
-        //       width: 3 // points
-        //     }
-        //   },
-        //   uniqueValueInfos: [
-        //     createMarkerSymbol('Vanity Address'),
-        //     createMarkerSymbol('Commercial'),
-        //     createMarkerSymbol('Primary Commercial'),
-        //     createMarkerSymbol('Residential'),
-        //     createMarkerSymbol('Garage'),
-        //     createMarkerSymbol('House of Worship'),
-        //     createMarkerSymbol('Community Facility')
-        //   ]
-        // }
-        
+        function createMarkerSymbol(value, url) {
+          return {
+            value: value,
+            symbol: {
+              type: "picture-marker",
+              url: url,
+              width: "20px",
+              height: "20px",
+            },
+          };
+        }
+        const safTypeRenderer = {
+          type: "unique-value",
+          field: "SAF Type",
+          defaultSymbol: {
+            type: "simple-marker",
+            style: "circle",
+            size: "20px", // pixels
+            outline: {
+              color: "#aaaaaa",
+              width: 3, // points
+            },
+          },
+          uniqueValueInfos: [
+            createMarkerSymbol("Vanity Address", "http://static.arcgis.com/images/Symbols/Shapes/PurplePin2LargeB.png"),
+            createMarkerSymbol("Commercial", "http://static.arcgis.com/images/Symbols/Shapes/BluePin2LargeB.png"),
+            createMarkerSymbol("Primary Commercial","http://static.arcgis.com/images/Symbols/Shapes/GreenPin2LargeB.png"),
+            createMarkerSymbol("Residential","http://static.arcgis.com/images/Symbols/Shapes/BlackPin2LargeB.png"),
+            createMarkerSymbol("Garage", "http://static.arcgis.com/images/Symbols/Shapes/YellowCircleLargeB.png"),
+            createMarkerSymbol("House of Worship", "http://static.arcgis.com/images/Symbols/Shapes/GreenCircleLargeB.png"),
+            createMarkerSymbol("Community Facility", "http://static.arcgis.com/images/Symbols/Shapes/BlueCircleLargeB.png"),
+          ],
+        };
+
         //add address layer
         addressLayer = new FeatureLayer({
-          url:
-            'https://manhattanbp.maps.arcgis.com/home/item.html?id=68f6d0f865e3499dacd181f386a479de',
+          url: "https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_addresses_PublicView/FeatureServer/0",
           popupTemplate: {
-            title: '{House_Num} {Street}',
+            title: "{House_Num} {Street}",
             content: [
               {
-                type: 'fields',
+                type: "fields",
                 fieldInfos: [
                   {
-                    fieldName: 'House_Num',
-                    label: 'House Number'
+                    fieldName: "House_Num",
+                    label: "House Number",
                   },
                   {
-                    fieldName: 'Street',
-                    label: 'Street'
+                    fieldName: "Street",
+                    label: "Street",
                   },
                   {
-                    fieldName: 'SAF_Type',
-                    label: 'SAF Type'
+                    fieldName: "SAF_Type",
+                    label: "SAF Type",
                   },
                   {
-                    fieldName: 'Primary_',
-                    label: 'Is Primary'
+                    fieldName: "Primary_",
+                    label: "Is Primary",
                   },
                   {
-                    fieldName: 'Posted',
-                    label: 'Is Posted'
+                    fieldName: "Posted",
+                    label: "Is Posted",
                   },
                   {
-                    fieldName: 'Comments',
-                    label: 'Comments'
-                  }
-                ]
+                    fieldName: "Comments",
+                    label: "Comments",
+                  },
+                ],
               },
-              { type: 'attachments' }
-            ]
-          }
-        })
+              { type: "attachments" },
+            ],
+          },
+        });
 
         //add legend
         const legend = new Legend({
@@ -194,101 +186,103 @@
           layerInfos: [
             {
               layer: addressLayer,
-              title: 'Addresses'
+              title: "Addresses",
             },
             {
               layer: plutoLayer,
-              title: 'Parcels/Lots'
-            }
-          ]
-        })
+              title: "Parcels/Lots",
+            },
+          ],
+        });
 
-        view.ui.add(legend, 'bottom-right')
+        view.ui.add(legend, "bottom-right");
 
-        map.add(addressLayer, 1)
+        map.add(addressLayer, 1);
 
         //filter for address that is within 10 feet of buffer of bbl
         view
           .whenLayerView(addressLayer)
-          .then(layerView => {
+          .then((layerView) => {
             layerView.filter = {
               geometry,
-              spatialRelationship: 'contains',
+              spatialRelationship: "contains",
               distance: 5,
-              units: 'feet'
-            }
+              units: "feet",
+            };
           })
           .then(() => {
-            const query = addressLayer.createQuery()
-            query.geometry = geometry
-            query.spatialRelationship = 'contains'
-            query.distance = 5
-            query.units = 'feet'
-            return queryFeaturesItem(addressLayer, query)
+            const query = addressLayer.createQuery();
+            query.geometry = geometry;
+            query.spatialRelationship = "contains";
+            query.distance = 5;
+            query.units = "feet";
+            return queryFeaturesItem(addressLayer, query);
           })
-          .then(features => {
-            addresses = features
+          .then((features) => {
+            addresses = features;
             //reset view
             view
               .whenLayerView(addressLayer)
-              .then(layerView => (layerView.filter = { where: '1=1' }))
-          })
-      })
-    })
-  })
+              .then((layerView) => (layerView.filter = { where: "1=1" }));
+          });
+      });
+    });
+  });
 
   function queryFeaturesItem(layer, query) {
     return layer
       .queryFeatures(query)
-      .then(results => {
+      .then((results) => {
         //convert to json, extract k/v, then
-        return results.features.map(feature => {
-          const { attributes } = feature.toJSON()
+        return results.features.map((feature) => {
+          const { attributes } = feature.toJSON();
           const {
             House_Num: houseNum,
             Street: street,
             FID: id,
             SAF_Type: type,
-            EditDate: lastEdit
-          } = attributes
+            EditDate: lastEdit,
+          } = attributes;
           return {
-            houseNum: houseNum ? houseNum : '_', //default if null
-            street: street ? street : '_', //default if null
+            houseNum: houseNum ? houseNum : "_", //default if null
+            street: street ? street : "_", //default if null
             id,
             type,
             lastEdit,
             feature,
-            files: []
-          }
-        })
+            files: [],
+          };
+        });
       })
-      .then(async features => {
+      .then(async (features) => {
         if (features.length === 0) {
-          return features
+          return features;
         }
         //query for attachements
-        const objectIds = features.map(feature => feature.id)
+        const objectIds = features.map((feature) => feature.id);
         const attachements = await layer.queryAttachments({
-          objectIds: objectIds
-        })
+          objectIds: objectIds,
+        });
         //bind to features
-        Object.keys(attachements).forEach(id => {
-          const feature = features.find(feature => feature.id.toString() === id)
-          feature.files = attachements[id].map(item => item.url)
-        })
-        return features
+        Object.keys(attachements).forEach((id) => {
+          const feature = features.find(
+            (feature) => feature.id.toString() === id
+          );
+          feature.files = attachements[id].map((item) => item.url);
+        });
+        return features;
       })
-      .catch(error => console.log(error.message))
+      .catch((error) => console.log(error.message));
   }
 
   function highlightAddress(event) {
     if (addressLayer) {
-      view.whenLayerView(addressLayer).then(layerView => {
+      view.whenLayerView(addressLayer).then((layerView) => {
         if (highlightSelect) {
-          highlightSelect.remove()
+          highlightSelect.remove();
         }
-        highlightSelect = layerView.highlight(event.detail.feature)
-      })
+        highlightSelect = layerView.highlight(event.detail.feature);
+      });
     }
   }
 </script>
@@ -299,71 +293,72 @@
   <ul>
     <li>
       <a
-        href="{`https://zola.planning.nyc.gov/l/lot/${bbl_break.boro}/${bbl_break.block}/${bbl_break.lot}`}"
+        href={`https://zola.planning.nyc.gov/l/lot/${bbl_break.boro}/${bbl_break.block}/${bbl_break.lot}`}
         target="_blank"
-        rel="noopener noreferrer"
-        >View ZOLA</a
+        rel="noopener noreferrer">View ZOLA</a
       >
     </li>
     <li>
       <a
-        href="{`http://a836-acris.nyc.gov/bblsearch/bblsearch.asp?borough=${bbl_break.boro}&block=${bbl_break.block}&lot=${bbl_break.lot}`}"
+        href={`http://a836-acris.nyc.gov/bblsearch/bblsearch.asp?borough=${bbl_break.boro}&block=${bbl_break.block}&lot=${bbl_break.lot}`}
         target="_blank"
-        rel="noopener noreferrer"
-        >View ACRIS</a
+        rel="noopener noreferrer">View ACRIS</a
       >
     </li>
     <li>
       <a
-        href="{`http://a810-bisweb.nyc.gov/bisweb/PropertyBrowseByBBLServlet?allborough=${bbl_break.boro}&allblock=${bbl_break.block}&alllot=${bbl_break.lot}&go5=+GO+&requestid=0`}"
+        href={`http://a810-bisweb.nyc.gov/bisweb/PropertyBrowseByBBLServlet?allborough=${bbl_break.boro}&allblock=${bbl_break.block}&alllot=${bbl_break.lot}&go5=+GO+&requestid=0`}
         target="_blank"
-        rel="noopener noreferrer"
-        >View DOB</a
+        rel="noopener noreferrer">View DOB</a
       >
     </li>
   </ul>
 
   {#if lotDetails.type}
-  <p><strong>Type: </strong>{lotDetails.type}</p>
-  {/if} {#if lotDetails.comments}
-  <p><strong>Comments: </strong>{lotDetails.comments}</p>
+    <p><strong>Type: </strong>{lotDetails.type}</p>
+  {/if}
+  {#if lotDetails.comments}
+    <p><strong>Comments: </strong>{lotDetails.comments}</p>
   {/if}
 
   <p><strong>Files</strong></p>
   {#if lotDetails.files.length}
-  <ul>
-    {#each lotDetails.files as lot}
-    <li>
-      <a href="{lot.url}" target="_blank" rel="noopener noreferrer"
-        >{lot.name}</a
-      >
-    </li>
-    {/each}
-  </ul>
-
+    <ul>
+      {#each lotDetails.files as lot}
+        <li>
+          <a href={lot.url} target="_blank" rel="noopener noreferrer"
+            >{lot.name}</a
+          >
+        </li>
+      {/each}
+    </ul>
   {:else}
-  <p>No files attached to this lot</p>
+    <p>No files attached to this lot</p>
   {/if}
 
   <hr />
 
-  {#if addresses} {#if addresses.length}
-  <p><strong>There are {addresses.length} addresses for this lot.</strong></p>
+  {#if addresses}
+    {#if addresses.length}
+      <p>
+        <strong>There are {addresses.length} addresses for this lot.</strong>
+      </p>
 
-  <AddressTable {addresses} on:message="{highlightAddress}"></AddressTable>
+      <AddressTable {addresses} on:message={highlightAddress}></AddressTable>
+    {:else}
+      <p>
+        <strong
+          >No addresses mapped in the database, please view the files above.</strong
+        >
+      </p>
+    {/if}
   {:else}
-  <p>
-    <strong
-      >No addresses mapped in the database, please view the files above.</strong
-    >
-  </p>
-  {/if} {:else}
-  <p>Loading...</p>
+    <p>Loading...</p>
   {/if}
 
   <br />
 
-  <div id="map" bind:this="{container}"></div>
+  <div id="map" bind:this={container}></div>
   <hr />
   <a href="/" use:link>Go back to main page</a>
 </div>
