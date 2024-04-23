@@ -142,7 +142,8 @@
 
         //add address layer
         addressLayer = new FeatureLayer({
-          url: "https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_addresses_PublicView/FeatureServer/0",
+          url: "https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_addresses_NewPublicView/FeatureServer/0",
+          render: safTypeRenderer,
           popupTemplate: {
             title: "{House_Num} {Street}",
             content: [
