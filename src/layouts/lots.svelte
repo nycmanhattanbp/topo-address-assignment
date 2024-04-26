@@ -16,6 +16,7 @@
   //remove all commas
   $: bbl = parseInt(params.bbl.split(",").join(""));
 
+
   //generate bbl
 
   $: bbl_break = {
@@ -120,15 +121,15 @@
         const safTypeRenderer = {
           type: "unique-value",
           field: "SAF Type",
-          defaultSymbol: {
-            type: "simple-marker",
-            style: "circle",
-            size: "20px", // pixels
-            outline: {
-              color: "#aaaaaa",
-              width: 3, // points
-            },
-          },
+          // defaultSymbol: {
+          //   type: "picture-marker",
+          //   // style: "circle",
+          //   size: "20px", // pixels
+          //   // outline: {
+          //   //   color: "#aaaaaa",
+          //   //   width: 3, // points
+          //   // },
+          // },
           uniqueValueInfos: [
             createMarkerSymbol("Vanity Address", "http://static.arcgis.com/images/Symbols/Shapes/PurplePin2LargeB.png"),
             createMarkerSymbol("Commercial", "http://static.arcgis.com/images/Symbols/Shapes/BluePin2LargeB.png"),
