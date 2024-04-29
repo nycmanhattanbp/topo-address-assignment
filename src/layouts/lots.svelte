@@ -31,6 +31,7 @@
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
       "esri/widgets/Legend",
+      "esri/symbols/PictureMarkerSymbol",
     ], (Map, MapView, FeatureLayer, Legend) => {
       const map = new Map({
         basemap: "gray-vector",
@@ -116,20 +117,23 @@
               width: "20px",
               height: "20px",
             },
+            label: value
           };
         }
         const safTypeRenderer = {
           type: "unique-value",
-          field: "SAF Type",
-          // defaultSymbol: {
-          //   type: "picture-marker",
-          //   // style: "circle",
-          //   size: "20px", // pixels
-          //   // outline: {
-          //   //   color: "#aaaaaa",
-          //   //   width: 3, // points
-          //   // },
-          // },
+          field: "SAF_Type",
+          defaultSymbol: {
+            // type: "picture-marker",
+            type: "simple-marker",
+            style: "circle",
+            color: "#000000",
+            size: "20px", // pixels
+            outline: {
+              color: "#aaaaaa",
+              width: 3, // points
+            },
+          },
           uniqueValueInfos: [
             createMarkerSymbol("Vanity Address", "http://static.arcgis.com/images/Symbols/Shapes/PurplePin2LargeB.png"),
             createMarkerSymbol("Commercial", "http://static.arcgis.com/images/Symbols/Shapes/BluePin2LargeB.png"),
@@ -145,6 +149,8 @@
         addressLayer = new FeatureLayer({
           url: "https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_addresses_NewPublicView/FeatureServer/0",
           render: safTypeRenderer,
+          // outFields: ["SAF_Type"],
+          // definitionExpression: `SAF_Type = ${SAF_Type}`,
           popupTemplate: {
             title: "{House_Num} {Street}",
             content: [
