@@ -30,6 +30,7 @@
       "esri/views/MapView",
       "esri/layers/FeatureLayer",
       "esri/widgets/Legend",
+      "esri/symbols/PictureMarkerSymbol",
     ], (Map, MapView, FeatureLayer, Legend) => {
       const map = new Map({
         basemap: "gray-vector",
