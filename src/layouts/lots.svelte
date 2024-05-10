@@ -16,7 +16,6 @@
   //remove all commas
   $: bbl = parseInt(params.bbl.split(",").join(""));
 
-
   //generate bbl
 
   $: bbl_break = {
@@ -74,7 +73,7 @@
 
       const plutoLayer = new FeatureLayer({
         url: "https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_pluto_PublicView/FeatureServer/0",
-        renderer: typeRenderer,
+        // renderer: typeRenderer,
         opacity: 0.4,
         outFields: ["BBL", "Type"],
         definitionExpression: `BBL = ${bbl}`,
@@ -82,6 +81,7 @@
 
       //add to map
       map.add(plutoLayer, 0);
+
 
       //zoom to plutoLayer extent
       plutoLayer
@@ -107,20 +107,20 @@
         lotDetails.type = attributes["Type"];
 
         // style point marker symbols
-        function createMarkerSymbol(value, url) {
-          return {
-            value: value,
-            symbol: {
-              type: "picture-marker",
-              url: url,
-              width: "20px",
-              height: "20px",
-            },
-          };
-        }
-        const safTypeRenderer = {
-          type: "unique-value",
-          field: "SAF Type",
+        // function createMarkerSymbol(value, url) {
+        //   return {
+        //     value: value,
+        //     symbol: {
+        //       type: "picture-marker",
+        //       url: url,
+        //       width: "20px",
+        //       height: "20px",
+        //     },
+        //   };
+        // }
+        // const safTypeRenderer = {
+        //   type: "unique-value",
+        //   field: "SAF Type",
           // defaultSymbol: {
           //   type: "picture-marker",
           //   // style: "circle",
@@ -130,21 +130,43 @@
           //   //   width: 3, // points
           //   // },
           // },
-          uniqueValueInfos: [
-            createMarkerSymbol("Vanity Address", "http://static.arcgis.com/images/Symbols/Shapes/PurplePin2LargeB.png"),
-            createMarkerSymbol("Commercial", "http://static.arcgis.com/images/Symbols/Shapes/BluePin2LargeB.png"),
-            createMarkerSymbol("Primary Commercial","http://static.arcgis.com/images/Symbols/Shapes/GreenPin2LargeB.png"),
-            createMarkerSymbol("Residential","http://static.arcgis.com/images/Symbols/Shapes/BlackPin2LargeB.png"),
-            createMarkerSymbol("Garage", "http://static.arcgis.com/images/Symbols/Shapes/YellowCircleLargeB.png"),
-            createMarkerSymbol("House of Worship", "http://static.arcgis.com/images/Symbols/Shapes/GreenCircleLargeB.png"),
-            createMarkerSymbol("Community Facility", "http://static.arcgis.com/images/Symbols/Shapes/BlueCircleLargeB.png"),
-          ],
-        };
+          // uniqueValueInfos: [
+          //   createMarkerSymbol(
+          //     "Vanity Address",
+          //     "http://static.arcgis.com/images/Symbols/Shapes/PurplePin2LargeB.png"
+          //   ),
+          //   createMarkerSymbol(
+          //     "Commercial",
+          //     "http://static.arcgis.com/images/Symbols/Shapes/BluePin2LargeB.png"
+          //   ),
+          //   createMarkerSymbol(
+          //     "Primary Commercial",
+          //     "http://static.arcgis.com/images/Symbols/Shapes/GreenPin2LargeB.png"
+          //   ),
+          //   createMarkerSymbol(
+          //     "Residential",
+          //     "http://static.arcgis.com/images/Symbols/Shapes/BlackPin2LargeB.png"
+          //   ),
+          //   createMarkerSymbol(
+          //     "Garage",
+          //     "http://static.arcgis.com/images/Symbols/Shapes/YellowCircleLargeB.png"
+          //   ),
+          //   createMarkerSymbol(
+          //     "House of Worship",
+          //     "http://static.arcgis.com/images/Symbols/Shapes/GreenCircleLargeB.png"
+          //   ),
+          //   createMarkerSymbol(
+          //     "Community Facility",
+          //     "http://static.arcgis.com/images/Symbols/Shapes/BlueCircleLargeB.png"
+          //   ),
+          // ],
+        // };
 
         //add address layer
         addressLayer = new FeatureLayer({
-          url: "https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_addresses_NewPublicView/FeatureServer/0",
-          render: safTypeRenderer,
+          // url: "https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_addresses_NewPublicView/FeatureServer/0",
+          portalItem: {id:"fd0cfb84c5bd44bf9cbc3197fee2fc56"},
+          // render: safTypeRenderer,
           popupTemplate: {
             title: "{House_Num} {Street}",
             content: [

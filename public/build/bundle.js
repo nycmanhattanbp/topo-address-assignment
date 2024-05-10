@@ -1489,7 +1489,7 @@ var app = (function () {
     			div = element("div");
     			attr_dev(div, "id", "map");
     			attr_dev(div, "class", "svelte-x7oda4");
-    			add_location(div, file, 110, 0, 2676);
+    			add_location(div, file, 110, 0, 2700);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1571,7 +1571,7 @@ var app = (function () {
     					uniqueValueInfos: [
     						createFillSymbol('New/Permanent', '#b92025', false),
     						createFillSymbol('Tentative', '#3276bb', false),
-    						createFillSymbol('No Topo', '#f3c94d', [185, 32, 37, 0.75])
+    						createFillSymbol('No Topo (verification required)', '#f3c94d', [185, 32, 37, 0.75])
     					]
     				};
 
@@ -3271,7 +3271,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (319:2) {#if lotDetails.type}
+    // (341:2) {#if lotDetails.type}
     function create_if_block_4(ctx) {
     	let p;
     	let strong;
@@ -3284,8 +3284,8 @@ var app = (function () {
     			strong = element("strong");
     			strong.textContent = "Type: ";
     			t1 = text(t1_value);
-    			add_location(strong, file$6, 319, 7, 9615);
-    			add_location(p, file$6, 319, 4, 9612);
+    			add_location(strong, file$6, 341, 7, 10118);
+    			add_location(p, file$6, 341, 4, 10115);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3304,14 +3304,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(319:2) {#if lotDetails.type}",
+    		source: "(341:2) {#if lotDetails.type}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (322:2) {#if lotDetails.comments}
+    // (344:2) {#if lotDetails.comments}
     function create_if_block_3(ctx) {
     	let p;
     	let strong;
@@ -3324,8 +3324,8 @@ var app = (function () {
     			strong = element("strong");
     			strong.textContent = "Comments: ";
     			t1 = text(t1_value);
-    			add_location(strong, file$6, 322, 7, 9703);
-    			add_location(p, file$6, 322, 4, 9700);
+    			add_location(strong, file$6, 344, 7, 10206);
+    			add_location(p, file$6, 344, 4, 10203);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3344,14 +3344,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(322:2) {#if lotDetails.comments}",
+    		source: "(344:2) {#if lotDetails.comments}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (337:2) {:else}
+    // (359:2) {:else}
     function create_else_block_2(ctx) {
     	let p;
 
@@ -3359,7 +3359,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "No files attached to this lot";
-    			add_location(p, file$6, 337, 4, 10050);
+    			add_location(p, file$6, 359, 4, 10553);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3374,14 +3374,14 @@ var app = (function () {
     		block,
     		id: create_else_block_2.name,
     		type: "else",
-    		source: "(337:2) {:else}",
+    		source: "(359:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (327:2) {#if lotDetails.files.length}
+    // (349:2) {#if lotDetails.files.length}
     function create_if_block_2(ctx) {
     	let ul;
     	let each_value = /*lotDetails*/ ctx[3].files;
@@ -3400,7 +3400,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(ul, file$6, 327, 4, 9833);
+    			add_location(ul, file$6, 349, 4, 10336);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ul, anchor);
@@ -3446,14 +3446,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(327:2) {#if lotDetails.files.length}",
+    		source: "(349:2) {#if lotDetails.files.length}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (329:6) {#each lotDetails.files as lot}
+    // (351:6) {#each lotDetails.files as lot}
     function create_each_block$2(ctx) {
     	let li;
     	let a;
@@ -3471,8 +3471,8 @@ var app = (function () {
     			attr_dev(a, "href", a_href_value = /*lot*/ ctx[11].url);
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noopener noreferrer");
-    			add_location(a, file$6, 330, 10, 9899);
-    			add_location(li, file$6, 329, 8, 9884);
+    			add_location(a, file$6, 352, 10, 10402);
+    			add_location(li, file$6, 351, 8, 10387);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -3496,14 +3496,14 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(329:6) {#each lotDetails.files as lot}",
+    		source: "(351:6) {#each lotDetails.files as lot}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (357:2) {:else}
+    // (379:2) {:else}
     function create_else_block_1(ctx) {
     	let p;
 
@@ -3511,7 +3511,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Loading...";
-    			add_location(p, file$6, 357, 4, 10497);
+    			add_location(p, file$6, 379, 4, 11000);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3528,14 +3528,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(357:2) {:else}",
+    		source: "(379:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (343:2) {#if addresses}
+    // (365:2) {#if addresses}
     function create_if_block$3(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -3608,14 +3608,14 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(343:2) {#if addresses}",
+    		source: "(365:2) {#if addresses}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (350:4) {:else}
+    // (372:4) {:else}
     function create_else_block$1(ctx) {
     	let p;
     	let strong;
@@ -3625,8 +3625,8 @@ var app = (function () {
     			p = element("p");
     			strong = element("strong");
     			strong.textContent = "No addresses mapped in the database, please view the files above.";
-    			add_location(strong, file$6, 351, 8, 10359);
-    			add_location(p, file$6, 350, 6, 10347);
+    			add_location(strong, file$6, 373, 8, 10862);
+    			add_location(p, file$6, 372, 6, 10850);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3644,14 +3644,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(350:4) {:else}",
+    		source: "(372:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (344:4) {#if addresses.length}
+    // (366:4) {#if addresses.length}
     function create_if_block_1$1(ctx) {
     	let p;
     	let strong;
@@ -3679,8 +3679,8 @@ var app = (function () {
     			t2 = text(" addresses for this lot.");
     			t3 = space();
     			create_component(addresstable.$$.fragment);
-    			add_location(strong, file$6, 345, 8, 10169);
-    			add_location(p, file$6, 344, 6, 10157);
+    			add_location(strong, file$6, 367, 8, 10672);
+    			add_location(p, file$6, 366, 6, 10660);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3718,7 +3718,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(344:4) {#if addresses.length}",
+    		source: "(366:4) {#if addresses.length}",
     		ctx
     	});
 
@@ -3838,37 +3838,37 @@ var app = (function () {
     			a3 = element("a");
     			a3.textContent = "Go back to main page";
     			attr_dev(h3, "class", "is-3");
-    			add_location(h3, file$6, 292, 2, 8730);
+    			add_location(h3, file$6, 314, 2, 9233);
     			attr_dev(p0, "class", "is-6 subtitle");
-    			add_location(p0, file$6, 293, 2, 8770);
+    			add_location(p0, file$6, 315, 2, 9273);
     			attr_dev(a0, "href", a0_href_value = `https://zola.planning.nyc.gov/l/lot/${/*bbl_break*/ ctx[4].boro}/${/*bbl_break*/ ctx[4].block}/${/*bbl_break*/ ctx[4].lot}`);
     			attr_dev(a0, "target", "_blank");
     			attr_dev(a0, "rel", "noopener noreferrer");
-    			add_location(a0, file$6, 296, 6, 8843);
-    			add_location(li0, file$6, 295, 4, 8832);
+    			add_location(a0, file$6, 318, 6, 9346);
+    			add_location(li0, file$6, 317, 4, 9335);
     			attr_dev(a1, "href", a1_href_value = `http://a836-acris.nyc.gov/bblsearch/bblsearch.asp?borough=${/*bbl_break*/ ctx[4].boro}&block=${/*bbl_break*/ ctx[4].block}&lot=${/*bbl_break*/ ctx[4].lot}`);
     			attr_dev(a1, "target", "_blank");
     			attr_dev(a1, "rel", "noopener noreferrer");
-    			add_location(a1, file$6, 303, 6, 9057);
-    			add_location(li1, file$6, 302, 4, 9046);
+    			add_location(a1, file$6, 325, 6, 9560);
+    			add_location(li1, file$6, 324, 4, 9549);
     			attr_dev(a2, "href", a2_href_value = `http://a810-bisweb.nyc.gov/bisweb/PropertyBrowseByBBLServlet?allborough=${/*bbl_break*/ ctx[4].boro}&allblock=${/*bbl_break*/ ctx[4].block}&alllot=${/*bbl_break*/ ctx[4].lot}&go5=+GO+&requestid=0`);
     			attr_dev(a2, "target", "_blank");
     			attr_dev(a2, "rel", "noopener noreferrer");
-    			add_location(a2, file$6, 310, 6, 9304);
-    			add_location(li2, file$6, 309, 4, 9293);
-    			add_location(ul, file$6, 294, 2, 8823);
-    			add_location(strong, file$6, 325, 5, 9770);
-    			add_location(p1, file$6, 325, 2, 9767);
-    			add_location(hr0, file$6, 340, 2, 10098);
-    			add_location(br, file$6, 360, 2, 10526);
+    			add_location(a2, file$6, 332, 6, 9807);
+    			add_location(li2, file$6, 331, 4, 9796);
+    			add_location(ul, file$6, 316, 2, 9326);
+    			add_location(strong, file$6, 347, 5, 10273);
+    			add_location(p1, file$6, 347, 2, 10270);
+    			add_location(hr0, file$6, 362, 2, 10601);
+    			add_location(br, file$6, 382, 2, 11029);
     			attr_dev(div0, "id", "map");
     			attr_dev(div0, "class", "svelte-1g1l9fv");
-    			add_location(div0, file$6, 362, 2, 10536);
-    			add_location(hr1, file$6, 363, 2, 10581);
+    			add_location(div0, file$6, 384, 2, 11039);
+    			add_location(hr1, file$6, 385, 2, 11084);
     			attr_dev(a3, "href", "/");
-    			add_location(a3, file$6, 364, 2, 10590);
+    			add_location(a3, file$6, 386, 2, 11093);
     			attr_dev(div1, "class", "container");
-    			add_location(div1, file$6, 291, 0, 8704);
+    			add_location(div1, file$6, 313, 0, 9207);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4101,34 +4101,9 @@ var app = (function () {
     						zoom: 16
     					});
 
-    				function createFillSymbol(value, color) {
-    					return {
-    						value,
-    						symbol: {
-    							color,
-    							type: "simple-fill",
-    							style: "solid",
-    							outline: { style: "none" }
-    						},
-    						label: value
-    					};
-    				}
-
-    				const typeRenderer = {
-    					type: "unique-value",
-    					field: "BBL",
-    					defaultSymbol: {
-    						type: "simple-fill",
-    						color: "#aaaaaa",
-    						style: "solid",
-    						outline: { style: "none" }
-    					},
-    					uniqueValueInfos: [createFillSymbol(bbl, "#b92025")]
-    				};
-
     				const plutoLayer = new FeatureLayer({
     						url: "https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_pluto_PublicView/FeatureServer/0",
-    						renderer: typeRenderer,
+    						// renderer: typeRenderer,
     						opacity: 0.4,
     						outFields: ["BBL", "Type"],
     						definitionExpression: `BBL = ${bbl}`
@@ -4153,45 +4128,65 @@ var app = (function () {
     					$$invalidate(3, lotDetails.type = attributes["Type"], lotDetails);
 
     					// style point marker symbols
-    					function createMarkerSymbol(value, url) {
-    						return {
-    							value,
-    							symbol: {
-    								type: "picture-marker",
-    								url,
-    								width: "20px",
-    								height: "20px"
-    							}
-    						};
-    					}
-
-    					const safTypeRenderer = {
-    						type: "unique-value",
-    						field: "SAF Type",
-    						// defaultSymbol: {
-    						//   type: "picture-marker",
-    						//   // style: "circle",
-    						//   size: "20px", // pixels
-    						//   // outline: {
-    						//   //   color: "#aaaaaa",
-    						//   //   width: 3, // points
-    						//   // },
-    						// },
-    						uniqueValueInfos: [
-    							createMarkerSymbol("Vanity Address", "http://static.arcgis.com/images/Symbols/Shapes/PurplePin2LargeB.png"),
-    							createMarkerSymbol("Commercial", "http://static.arcgis.com/images/Symbols/Shapes/BluePin2LargeB.png"),
-    							createMarkerSymbol("Primary Commercial", "http://static.arcgis.com/images/Symbols/Shapes/GreenPin2LargeB.png"),
-    							createMarkerSymbol("Residential", "http://static.arcgis.com/images/Symbols/Shapes/BlackPin2LargeB.png"),
-    							createMarkerSymbol("Garage", "http://static.arcgis.com/images/Symbols/Shapes/YellowCircleLargeB.png"),
-    							createMarkerSymbol("House of Worship", "http://static.arcgis.com/images/Symbols/Shapes/GreenCircleLargeB.png"),
-    							createMarkerSymbol("Community Facility", "http://static.arcgis.com/images/Symbols/Shapes/BlueCircleLargeB.png")
-    						]
-    					};
-
+    					// function createMarkerSymbol(value, url) {
+    					//   return {
+    					//     value: value,
+    					//     symbol: {
+    					//       type: "picture-marker",
+    					//       url: url,
+    					//       width: "20px",
+    					//       height: "20px",
+    					//     },
+    					//   };
+    					// }
+    					// const safTypeRenderer = {
+    					//   type: "unique-value",
+    					//   field: "SAF Type",
+    					// defaultSymbol: {
+    					//   type: "picture-marker",
+    					//   // style: "circle",
+    					//   size: "20px", // pixels
+    					//   // outline: {
+    					//   //   color: "#aaaaaa",
+    					//   //   width: 3, // points
+    					//   // },
+    					// },
+    					// uniqueValueInfos: [
+    					//   createMarkerSymbol(
+    					//     "Vanity Address",
+    					//     "http://static.arcgis.com/images/Symbols/Shapes/PurplePin2LargeB.png"
+    					//   ),
+    					//   createMarkerSymbol(
+    					//     "Commercial",
+    					//     "http://static.arcgis.com/images/Symbols/Shapes/BluePin2LargeB.png"
+    					//   ),
+    					//   createMarkerSymbol(
+    					//     "Primary Commercial",
+    					//     "http://static.arcgis.com/images/Symbols/Shapes/GreenPin2LargeB.png"
+    					//   ),
+    					//   createMarkerSymbol(
+    					//     "Residential",
+    					//     "http://static.arcgis.com/images/Symbols/Shapes/BlackPin2LargeB.png"
+    					//   ),
+    					//   createMarkerSymbol(
+    					//     "Garage",
+    					//     "http://static.arcgis.com/images/Symbols/Shapes/YellowCircleLargeB.png"
+    					//   ),
+    					//   createMarkerSymbol(
+    					//     "House of Worship",
+    					//     "http://static.arcgis.com/images/Symbols/Shapes/GreenCircleLargeB.png"
+    					//   ),
+    					//   createMarkerSymbol(
+    					//     "Community Facility",
+    					//     "http://static.arcgis.com/images/Symbols/Shapes/BlueCircleLargeB.png"
+    					//   ),
+    					// ],
+    					// };
     					//add address layer
     					addressLayer = new FeatureLayer({
-    							url: "https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_addresses_NewPublicView/FeatureServer/0",
-    							render: safTypeRenderer,
+    							// url: "https://services1.arcgis.com/UXmZPIfr0bxRyaUR/arcgis/rest/services/mn_topo_addresses_NewPublicView/FeatureServer/0",
+    							portalItem: { id: "fd0cfb84c5bd44bf9cbc3197fee2fc56" },
+    							// render: safTypeRenderer,
     							popupTemplate: {
     								title: "{House_Num} {Street}",
     								content: [
