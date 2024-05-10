@@ -3271,7 +3271,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (341:2) {#if lotDetails.type}
+    // (342:2) {#if lotDetails.type}
     function create_if_block_4(ctx) {
     	let p;
     	let strong;
@@ -3284,8 +3284,8 @@ var app = (function () {
     			strong = element("strong");
     			strong.textContent = "Type: ";
     			t1 = text(t1_value);
-    			add_location(strong, file$6, 341, 7, 10118);
-    			add_location(p, file$6, 341, 4, 10115);
+    			add_location(strong, file$6, 342, 7, 10160);
+    			add_location(p, file$6, 342, 4, 10157);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3304,14 +3304,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(341:2) {#if lotDetails.type}",
+    		source: "(342:2) {#if lotDetails.type}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (344:2) {#if lotDetails.comments}
+    // (345:2) {#if lotDetails.comments}
     function create_if_block_3(ctx) {
     	let p;
     	let strong;
@@ -3324,8 +3324,8 @@ var app = (function () {
     			strong = element("strong");
     			strong.textContent = "Comments: ";
     			t1 = text(t1_value);
-    			add_location(strong, file$6, 344, 7, 10206);
-    			add_location(p, file$6, 344, 4, 10203);
+    			add_location(strong, file$6, 345, 7, 10248);
+    			add_location(p, file$6, 345, 4, 10245);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3344,14 +3344,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(344:2) {#if lotDetails.comments}",
+    		source: "(345:2) {#if lotDetails.comments}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (359:2) {:else}
+    // (360:2) {:else}
     function create_else_block_2(ctx) {
     	let p;
 
@@ -3359,7 +3359,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "No files attached to this lot";
-    			add_location(p, file$6, 359, 4, 10553);
+    			add_location(p, file$6, 360, 4, 10595);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3374,14 +3374,14 @@ var app = (function () {
     		block,
     		id: create_else_block_2.name,
     		type: "else",
-    		source: "(359:2) {:else}",
+    		source: "(360:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (349:2) {#if lotDetails.files.length}
+    // (350:2) {#if lotDetails.files.length}
     function create_if_block_2(ctx) {
     	let ul;
     	let each_value = /*lotDetails*/ ctx[3].files;
@@ -3400,7 +3400,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			add_location(ul, file$6, 349, 4, 10336);
+    			add_location(ul, file$6, 350, 4, 10378);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, ul, anchor);
@@ -3446,14 +3446,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(349:2) {#if lotDetails.files.length}",
+    		source: "(350:2) {#if lotDetails.files.length}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (351:6) {#each lotDetails.files as lot}
+    // (352:6) {#each lotDetails.files as lot}
     function create_each_block$2(ctx) {
     	let li;
     	let a;
@@ -3471,8 +3471,8 @@ var app = (function () {
     			attr_dev(a, "href", a_href_value = /*lot*/ ctx[11].url);
     			attr_dev(a, "target", "_blank");
     			attr_dev(a, "rel", "noopener noreferrer");
-    			add_location(a, file$6, 352, 10, 10402);
-    			add_location(li, file$6, 351, 8, 10387);
+    			add_location(a, file$6, 353, 10, 10444);
+    			add_location(li, file$6, 352, 8, 10429);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -3496,14 +3496,14 @@ var app = (function () {
     		block,
     		id: create_each_block$2.name,
     		type: "each",
-    		source: "(351:6) {#each lotDetails.files as lot}",
+    		source: "(352:6) {#each lotDetails.files as lot}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (379:2) {:else}
+    // (380:2) {:else}
     function create_else_block_1(ctx) {
     	let p;
 
@@ -3511,7 +3511,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			p.textContent = "Loading...";
-    			add_location(p, file$6, 379, 4, 11000);
+    			add_location(p, file$6, 380, 4, 11042);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3528,14 +3528,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(379:2) {:else}",
+    		source: "(380:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (365:2) {#if addresses}
+    // (366:2) {#if addresses}
     function create_if_block$3(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -3608,14 +3608,14 @@ var app = (function () {
     		block,
     		id: create_if_block$3.name,
     		type: "if",
-    		source: "(365:2) {#if addresses}",
+    		source: "(366:2) {#if addresses}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (372:4) {:else}
+    // (373:4) {:else}
     function create_else_block$1(ctx) {
     	let p;
     	let strong;
@@ -3625,8 +3625,8 @@ var app = (function () {
     			p = element("p");
     			strong = element("strong");
     			strong.textContent = "No addresses mapped in the database, please view the files above.";
-    			add_location(strong, file$6, 373, 8, 10862);
-    			add_location(p, file$6, 372, 6, 10850);
+    			add_location(strong, file$6, 374, 8, 10904);
+    			add_location(p, file$6, 373, 6, 10892);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3644,14 +3644,14 @@ var app = (function () {
     		block,
     		id: create_else_block$1.name,
     		type: "else",
-    		source: "(372:4) {:else}",
+    		source: "(373:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (366:4) {#if addresses.length}
+    // (367:4) {#if addresses.length}
     function create_if_block_1$1(ctx) {
     	let p;
     	let strong;
@@ -3679,8 +3679,8 @@ var app = (function () {
     			t2 = text(" addresses for this lot.");
     			t3 = space();
     			create_component(addresstable.$$.fragment);
-    			add_location(strong, file$6, 367, 8, 10672);
-    			add_location(p, file$6, 366, 6, 10660);
+    			add_location(strong, file$6, 368, 8, 10714);
+    			add_location(p, file$6, 367, 6, 10702);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3718,7 +3718,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1$1.name,
     		type: "if",
-    		source: "(366:4) {#if addresses.length}",
+    		source: "(367:4) {#if addresses.length}",
     		ctx
     	});
 
@@ -3838,37 +3838,37 @@ var app = (function () {
     			a3 = element("a");
     			a3.textContent = "Go back to main page";
     			attr_dev(h3, "class", "is-3");
-    			add_location(h3, file$6, 314, 2, 9233);
+    			add_location(h3, file$6, 315, 2, 9275);
     			attr_dev(p0, "class", "is-6 subtitle");
-    			add_location(p0, file$6, 315, 2, 9273);
+    			add_location(p0, file$6, 316, 2, 9315);
     			attr_dev(a0, "href", a0_href_value = `https://zola.planning.nyc.gov/l/lot/${/*bbl_break*/ ctx[4].boro}/${/*bbl_break*/ ctx[4].block}/${/*bbl_break*/ ctx[4].lot}`);
     			attr_dev(a0, "target", "_blank");
     			attr_dev(a0, "rel", "noopener noreferrer");
-    			add_location(a0, file$6, 318, 6, 9346);
-    			add_location(li0, file$6, 317, 4, 9335);
+    			add_location(a0, file$6, 319, 6, 9388);
+    			add_location(li0, file$6, 318, 4, 9377);
     			attr_dev(a1, "href", a1_href_value = `http://a836-acris.nyc.gov/bblsearch/bblsearch.asp?borough=${/*bbl_break*/ ctx[4].boro}&block=${/*bbl_break*/ ctx[4].block}&lot=${/*bbl_break*/ ctx[4].lot}`);
     			attr_dev(a1, "target", "_blank");
     			attr_dev(a1, "rel", "noopener noreferrer");
-    			add_location(a1, file$6, 325, 6, 9560);
-    			add_location(li1, file$6, 324, 4, 9549);
+    			add_location(a1, file$6, 326, 6, 9602);
+    			add_location(li1, file$6, 325, 4, 9591);
     			attr_dev(a2, "href", a2_href_value = `http://a810-bisweb.nyc.gov/bisweb/PropertyBrowseByBBLServlet?allborough=${/*bbl_break*/ ctx[4].boro}&allblock=${/*bbl_break*/ ctx[4].block}&alllot=${/*bbl_break*/ ctx[4].lot}&go5=+GO+&requestid=0`);
     			attr_dev(a2, "target", "_blank");
     			attr_dev(a2, "rel", "noopener noreferrer");
-    			add_location(a2, file$6, 332, 6, 9807);
-    			add_location(li2, file$6, 331, 4, 9796);
-    			add_location(ul, file$6, 316, 2, 9326);
-    			add_location(strong, file$6, 347, 5, 10273);
-    			add_location(p1, file$6, 347, 2, 10270);
-    			add_location(hr0, file$6, 362, 2, 10601);
-    			add_location(br, file$6, 382, 2, 11029);
+    			add_location(a2, file$6, 333, 6, 9849);
+    			add_location(li2, file$6, 332, 4, 9838);
+    			add_location(ul, file$6, 317, 2, 9368);
+    			add_location(strong, file$6, 348, 5, 10315);
+    			add_location(p1, file$6, 348, 2, 10312);
+    			add_location(hr0, file$6, 363, 2, 10643);
+    			add_location(br, file$6, 383, 2, 11071);
     			attr_dev(div0, "id", "map");
     			attr_dev(div0, "class", "svelte-1g1l9fv");
-    			add_location(div0, file$6, 384, 2, 11039);
-    			add_location(hr1, file$6, 385, 2, 11084);
+    			add_location(div0, file$6, 385, 2, 11081);
+    			add_location(hr1, file$6, 386, 2, 11126);
     			attr_dev(a3, "href", "/");
-    			add_location(a3, file$6, 386, 2, 11093);
+    			add_location(a3, file$6, 387, 2, 11135);
     			attr_dev(div1, "class", "container");
-    			add_location(div1, file$6, 313, 0, 9207);
+    			add_location(div1, file$6, 314, 0, 9249);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -4089,7 +4089,8 @@ var app = (function () {
     				"esri/Map",
     				"esri/views/MapView",
     				"esri/layers/FeatureLayer",
-    				"esri/widgets/Legend"
+    				"esri/widgets/Legend",
+    				"esri/symbols/PictureMarkerSymbol"
     			],
     			(Map, MapView, FeatureLayer, Legend) => {
     				const map = new Map({ basemap: "gray-vector" });
