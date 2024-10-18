@@ -312,8 +312,8 @@
   }
 </script>
 
-<div class="container">
-  <h3 class="is-3">Lot Information</h3>
+<main class="container-fluid mt-5">
+  <h3>Lot Information</h3>
   <p class="is-6 subtitle">Boro-Block-Lot: {bbl}</p>
   <ul>
     <li>
@@ -386,7 +386,7 @@
   <div id="map" bind:this={container}></div>
   <hr />
   <a href="/" use:link>Go back to main page</a>
-</div>
+</main>
 
 <style>
   :global(.esri-legend) {

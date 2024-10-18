@@ -1,15 +1,17 @@
-html,
 body {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-body {
+  font-family: 'Source Sans Pro', sans-serif;
   color: #333;
   margin: 0;
   padding: 8px;
   box-sizing: border-box;
+}
+
+header, main {
+  max-width: 1000px;
+}
+
+:global(.is-1, .is-2, .is-3, .is-4, .is-5, .is-6) {
+  font-family: 'Merriweather', serif;
 }
 
 a {
