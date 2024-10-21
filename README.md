@@ -77,7 +77,7 @@ now deploy --name my-project
 
 ### To github pages:
 ```bash
-http://localhost:5000
+git subtree push --prefix public/ origin gh-pages
 ```
 
 As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
